@@ -1,0 +1,9 @@
+{
+  "chain_id": 44005,
+  "rpc": "https://rpc-test.qday.info",
+  "token_tusd8": "0x456569838f1d43009A91ebA4263147Afd7233483",
+  "agent_wallet": "0xba495b5eb152ccDF7715460901a5c62f682dd4Ee",
+  "agent_payments": "0x19c37FEa76d8D4B688597EB3C65051f8b5D42a41",
+  "deploy_tx": "736c747cc1ae59ea69e29ac7d7e9f5dcd98f0abf372e06fe900c976ddcc514ea",
+  "deploy_block": 4119479
+}
