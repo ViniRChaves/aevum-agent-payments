@@ -4,13 +4,13 @@ https://dorahacks.io/hackathon/qday
 Prazo: **2026-12-11 08:00 UTC**. Submissão exige login web na conta DoraHacks
 (ytlvinnyl) — não existe rota de submissão via API pública documentada.
 
-> ⚠️ PENDÊNCIA antes de submeter: o repositório GitHub ainda NÃO foi criado.
-> A auditoria de segredos de 25/11/2026 encontrou uma chave privada de session
-> key descartável da demo no arquivo local `demo-session-key.json` e a
-> publicação foi interrompida por segurança (ver relatório da auditoria).
-> Quando a publicação for liberada (árvore sem esse arquivo, como o .gitignore
-> do projeto já prevê), a URL será:
+> ✅ REPOSITÓRIO PUBLICADO em 25/11/2026:
 > https://github.com/ViniRChaves/aevum-agent-payments
+> A árvore foi publicada SEM o arquivo local `demo-session-key.json` (chave
+> descartável da demo, já prevista no .gitignore do projeto), conforme a
+> auditoria de segredos de 25/11/2026 — nenhuma chave real, nenhuma carteira
+> pessoal e nenhum segredo estão no repositório. O repo inclui `demo.sh`
+> (reprodução em 1 comando) e `demo-session-key.example.json` (só placeholders).
 
 ---
 
@@ -70,7 +70,6 @@ and audit log. Testnet only, test tokens only, US$ 0 real spent.
 
 ## URL do repositório (GitHub)
 https://github.com/ViniRChaves/aevum-agent-payments
-(pendente de criação — ver aviso no topo deste arquivo)
 
 ## Evidência on-chain (Aevum Testnet, chain 44005, RPC https://rpc-test.qday.info)
 - Contrato AgentPayments: `0x19c37FEa76d8D4B688597EB3C65051f8b5D42a41`
@@ -93,6 +92,12 @@ no README.
 ```bash
 git clone https://github.com/ViniRChaves/aevum-agent-payments
 cd aevum-agent-payments
+./demo.sh   # atalho de 1 comando: venv + dependências + deploy + demo
+```
+
+Equivalente manual, passo a passo:
+
+```bash
 python3 -m venv .venv && .venv/bin/pip install web3 py-solc-x
 .venv/bin/python -c "import solcx; solcx.install_solc('0.8.24')"
 .venv/bin/python scripts/deploy.py   # implanta o contrato (testnet)
