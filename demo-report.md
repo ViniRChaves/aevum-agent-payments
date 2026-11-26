@@ -47,3 +47,33 @@ Beneficiário demo: `0x120F7879C7ae217F2eBe4E24ef4798E9a25D941e`
 Protótipo ponta a ponta FUNCIONANDO na testnet: 1 pagamento válido executado, 3 tentativas fora do mandato recusadas ANTES de qualquer assinatura, todas registradas em `audit/audit.jsonl`.
 
 NÃO inscrito no hackathon; NÃO submetido — esses passos exigem autorização final por escrito do usuário.
+
+---
+
+## Update — 2026-11-26
+
+**Estado da submissão.** O relatório acima é o registro histórico da
+execução de 2026-11-25 (21:16 UTC); a última linha do veredito reflete o
+estado naquele momento. Em 25/11/2026 o projeto foi submetido ao Aevum
+Builder Challenge #1 (DoraHacks):
+https://dorahacks.io/build/51924
+
+**Precisão sobre a recusa nº 3 (seção 7).** O pedido de 2,00 tUSD8 excedia
+AMBOS os limites ao mesmo tempo: o restante do mandato (2,00 − 0,50 = 1,50
+tUSD8) **e** o teto por pagamento da session key (1,00 tUSD8). O motivo
+registrado no log foi "over mandate cap" porque `simulatePayment` verifica o
+teto do mandato antes do teto por pagamento da chave. Os três casos de
+recusa são registros do executor demonstrado: documentam o comportamento
+deste executor e **não** constituem comprovação completa de segurança do
+sistema.
+
+**Natureza das evidências.** The deployed contract, successful testnet
+transactions and resulting state can be verified on-chain. Pre-signing
+rejection cases are documented in the application's execution logs and can
+be reproduced from the code. Os logs (`audit/audit.jsonl`) são registros da
+própria aplicação — não são uma auditoria independente nem prova imutável.
+
+**Validade dos artefatos da demo.** A session key da demonstração tinha
+validade de 1 dia e o mandato, de 7 dias (ambos contados de 25/11/2026);
+estarão expirados em 15/12/2026 (Demo Day). Os registros acima são
+históricos.
